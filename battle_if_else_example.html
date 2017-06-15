@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Battle</title>
+
+    <script>
+
+      var character = prompt("What is the name of your character?");
+      var character_health = prompt("How much health will " + character + " have?");
+      var characterDied = false;
+      
+      var monster = prompt("What monster will " + character + " fight?");
+      var monster_health = prompt("How much health will " + monster + " have?");
+      var monsterDied = false;
+
+
+      while (characterDied == false && monsterDied == false) {
+
+        if (monster_health <= 0){
+          alert("The monster has died! " + character + " has won!");
+          monsterDied = true;
+        }
+        else if (character_health <= 0) {
+          alert(character + " has died! The monster has won!");
+          characterDied = true;
+        }
+        else {
+          var character_attack = Math.floor((Math.random() * 10) + 1);
+          var monster_attack = Math.floor((Math.random() * 10) + 1);
+
+          character_health = character_health - monster_attack;
+          monster_health = monster_health - character_attack;
+
+          alert(character + " attacks " + monster + "! " + monster + " has " + monster_health + " health left!");
+          alert(monster + " attacks " + character + "! " + character + " has " + character_health + " health left!");
+
+        }
+
+      }
+
+
+      Math.floor((Math.random() * 10) + 1);
+
+
+
+    </script>
+
+
+
+  </head>
+  <body>
+
+
+  </body>
+</html>
